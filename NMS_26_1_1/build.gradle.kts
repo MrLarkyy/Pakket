@@ -9,7 +9,7 @@ dependencies {
     api(project(":API"))
     api("gg.aquatic:KEvent:26.0.5")
     compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-    compileOnly("net.kyori:adventure-text-serializer-ansi:4.26.1")
+    compileOnly("net.kyori:adventure-text-serializer-ansi:5.0.1")
 }
 
 kotlin {
