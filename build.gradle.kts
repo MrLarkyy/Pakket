@@ -20,7 +20,7 @@ repositories {
 
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
     api(project(":API"))
     api(project(":NMS_1_21_4"))
     api(project(":NMS_1_21_8"))

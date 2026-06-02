@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:26.1.2.build.+")
     compileOnly("io.netty:netty-all:4.2.12.Final")
     api("gg.aquatic:KEvent:26.0.5")
     compileOnly("com.ticxo.modelengine:ModelEngine:R4.0.8")

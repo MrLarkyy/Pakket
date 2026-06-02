@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    paperweight.paperDevBundle("26.1.1.build.15-alpha")
+    paperweight.paperDevBundle("26.1.2.build.+")
     api(project(":API"))
     api("gg.aquatic:KEvent:26.0.5")
     compileOnly("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
