@@ -25,7 +25,7 @@ dependencies {
     api(project(":NMS_1_21_4"))
     api(project(":NMS_1_21_8"))
     api(project(":NMS_1_21_9"))
-    api(project(mapOf("path" to ":NMS_26_1_1", "configuration" to "archives")))
+    api(project(":NMS_26_1_1"))
     api("gg.aquatic:KEvent:26.0.5")
     api("gg.aquatic:Common:26.0.16")
 }
