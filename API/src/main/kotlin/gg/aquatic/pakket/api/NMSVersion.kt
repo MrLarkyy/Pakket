@@ -14,8 +14,14 @@ enum class NMSVersion {
     companion object {
         fun ofAquatic(): NMSVersion? {
             val version = Bukkit.getServer().bukkitVersion.substringBefore("-")
+            val semver = version.split(".")
+            val major = semver[0].toInt()
+            val minor = semver[1].toInt()
+            val patch = semver.getOrNull(2)?.toIntOrNull()
 
-            return when(version) {
+            val versionToParse = "$major.$minor" + (patch?.let { ".$patch" } ?: "")
+
+            return when(versionToParse) {
                 "1.21.1" -> V_1_21_1
                 "1.21.4" -> V_1_21_4
                 "1.21.5" -> V_1_21_5
