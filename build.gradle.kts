@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.3.20"
+    kotlin("jvm") version "2.4.0"
     id("co.uzzu.dotenv.gradle") version "4.0.0"
     id("io.papermc.paperweight.userdev") version "2.0.0-beta.21" apply false
     `maven-publish`
@@ -27,7 +27,7 @@ dependencies {
     api(project(":NMS_1_21_9"))
     api(project(":NMS_26_1_1"))
     api("gg.aquatic:KEvent:26.0.5")
-    api("gg.aquatic:Common:26.0.16")
+    api("gg.aquatic:Common:26.0.17")
 }
 
 kotlin {
