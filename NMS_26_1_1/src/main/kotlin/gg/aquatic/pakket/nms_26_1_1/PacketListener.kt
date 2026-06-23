@@ -138,14 +138,10 @@ class PacketListener(player: Player) : PacketListenerBase(
         override fun handle(packet: Any, player: Player): PacketEvent? {
             return when (packet) {
                 is ServerboundInteractPacket -> {
-                    val interactType = when {
-                        packet.location() != null -> PacketInteractEvent.InteractType.INTERACT_AT
-                        packet.hand() != null -> PacketInteractEvent.InteractType.INTERACT
-                        else -> PacketInteractEvent.InteractType.ATTACK
-                    }
+                    val interactType = PacketInteractEvent.InteractType.INTERACT_AT
                     PacketInteractEvent(
                         player,
-                        packet.hand() == null && packet.location() == null,
+                        false,
                         packet.usingSecondaryAction(),
                         packet.entityId(),
                         interactType
