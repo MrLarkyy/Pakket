@@ -659,7 +659,7 @@ object NMSHandlerImpl : NMSHandler() {
                 val protectedPacket = ProtectedPacket(packet)
 
                 val playerConnection = (player as CraftPlayer).handle.connection.connection
-                playerConnection.channel.pipeline().write(protectedPacket)
+                playerConnection.channel.pipeline().writeAndFlush(protectedPacket)
             } else {
                 player.sendPacket(packet)
             }

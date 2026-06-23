@@ -553,6 +553,12 @@ object NMSHandlerImpl : NMSHandler() {
         return packet
     }
 
+    override fun createSetCursorItemPacket(itemStack: ItemStack?): Any {
+        return ClientboundSetCursorItemPacket(
+            itemStack?.let { NmsConversions.toNmsItemStack(it) } ?: net.minecraft.world.item.ItemStack.EMPTY
+        )
+    }
+
     override fun createSetWindowItemsPacket(
         inventoryId: Int,
         stateId: Int,
@@ -662,7 +668,7 @@ object NMSHandlerImpl : NMSHandler() {
                 val protectedPacket = ProtectedPacket(packet)
 
                 val playerConnection = (player as CraftPlayer).handle.connection.connection
-                playerConnection.channel.pipeline().write(protectedPacket)
+                playerConnection.channel.pipeline().writeAndFlush(protectedPacket)
             } else {
                 player.sendPacket(packet)
             }

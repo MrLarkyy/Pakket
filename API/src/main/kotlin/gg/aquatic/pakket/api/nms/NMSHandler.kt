@@ -44,6 +44,9 @@ abstract class NMSHandler {
 
     abstract fun createBundlePacket(packets: Collection<Any>): Any
     abstract fun createSetSlotItemPacket(inventoryId: Int, stateId: Int, slot: Int, itemStack: ItemStack?): Any
+    open fun createSetCursorItemPacket(itemStack: ItemStack?): Any {
+        return createSetSlotItemPacket(-1, 0, -1, itemStack)
+    }
     open fun setSlotItem(inventoryId: Int, stateId: Int, slot: Int, itemStack: ItemStack?, vararg players: Player) {
         val packet = createSetSlotItemPacket(inventoryId, stateId, slot, itemStack)
         sendPacket(packet, silent = false, *players)

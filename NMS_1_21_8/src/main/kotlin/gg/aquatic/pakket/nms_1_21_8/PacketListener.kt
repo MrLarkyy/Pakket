@@ -86,7 +86,7 @@ class PacketListener(player: Player) : PacketListenerBase(
                     val event = PacketContainerSetSlotEvent(
                         player,
                         packet.containerId,
-                        packet.stateId,
+                        packet.slot,
                         CraftItemStack.asCraftMirror(packet.item)
                     )
                     OutgoingHandlerResult.Forward(event) {
