@@ -128,6 +128,7 @@ abstract class NMSHandler {
         val packet = openWindowPacket(inventoryId, menuType, title)
         sendPacket(packet, silent = false, *players)
     }
+    abstract fun nextContainerId(player: Player): Int
     open fun closeWindow(inventoryId: Int, vararg players: Player) {
         val packet = closeWindowPacket(inventoryId)
         sendPacket(packet, silent = false, *players)

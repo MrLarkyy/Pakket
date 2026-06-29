@@ -125,7 +125,7 @@ class PacketListener(player: Player) : PacketListenerBase(
                 }
 
                 is ClientboundContainerClosePacket -> {
-                    val event = PacketContainerCloseEvent(player)
+                    val event = PacketContainerCloseEvent(player, packet.containerId)
                     OutgoingHandlerResult.Forward(event) { packet }
                 }
 
@@ -149,7 +149,7 @@ class PacketListener(player: Player) : PacketListenerBase(
                 }
 
                 is ServerboundContainerClosePacket -> {
-                    PacketContainerCloseEvent(player)
+                    PacketContainerCloseEvent(player, packet.containerId)
                 }
 
                 is ServerboundRenameItemPacket -> {

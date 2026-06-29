@@ -567,6 +567,10 @@ object NMSHandlerImpl : NMSHandler() {
         return packet
     }
 
+    override fun nextContainerId(player: Player): Int {
+        return (player as CraftPlayer).handle.nextContainerCounter()
+    }
+
     @Suppress("UnstableApiUsage")
     override fun openWindowPacket(
         inventoryId: Int,
