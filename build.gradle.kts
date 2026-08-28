@@ -1,7 +1,7 @@
 plugins {
     kotlin("jvm") version "2.4.0"
     id("co.uzzu.dotenv.gradle") version "4.0.0"
-    id("io.papermc.paperweight.userdev") version "2.0.0-beta.21" apply false
+    id("io.papermc.paperweight.userdev") version "2.0.0-beta.23" apply false
     `maven-publish`
     `java-library`
 }
